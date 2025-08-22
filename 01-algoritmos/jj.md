@@ -149,7 +149,7 @@ print(f"Seu resultado é: {exponenciar(2, 5)}") # 32
 </pre>
 
 
-- Dadas as medidas de uma sala em metros (comprimento e largura), informe a sua área em metros quadrados.
+2. Dadas as medidas de uma sala em metros (comprimento e largura), informe a sua área em metros quadrados.
 <pre>
 -inicializa comprimento, largura, area
 -recebe inputs (numerico) do comprimento e largura
@@ -159,7 +159,7 @@ print(f"Seu resultado é: {exponenciar(2, 5)}") # 32
 </pre>
 
 
-- Dados um salário e um percentual de reajuste, calcule o salário reajustado. Considere que o percentual de reajuste é dado por um número real entre 0 e 1. Por exemplo, se o reajuste for de 15%, o usuário deve digitar o número 0.15.
+3. Dados um salário e um percentual de reajuste, calcule o salário reajustado. Considere que o percentual de reajuste é dado por um número real entre 0 e 1. Por exemplo, se o reajuste for de 15%, o usuário deve digitar o número 0.15.
 
 <pre>
 -inicializa salario, reajuste percentual(de 0 a 1), salario novo
@@ -170,7 +170,7 @@ print(f"Seu resultado é: {exponenciar(2, 5)}") # 32
 </pre>
 
 
-- Dados o valor da compra e o percentual de desconto, calcule o valor a ser pago. Considere que o percentual de desconto é um número real entre 0 e 1.
+4. Dados o valor da compra e o percentual de desconto, calcule o valor a ser pago. Considere que o percentual de desconto é um número real entre 0 e 1.
 <pre>
 -inicializa valorInicial, percentual Desconto(de 0 a 1), valorFinal
 -recebe inputs (numerico) do valorInicial e do percentual de Desconto (float) 
@@ -181,7 +181,7 @@ print(f"Seu resultado é: {exponenciar(2, 5)}") # 32
 
 ---
 
-2. Construa o fluxograma (yEd) para:
+5. Construa o fluxograma (yEd) para:
 
 Leia a cotação do dólar
 Leia um valor em dólares
@@ -190,7 +190,7 @@ Mostre o resultado
 
 ---
 
-3. Construa o fluxograma (yEd) para:
+6. Construa o fluxograma (yEd) para:
 
 Leia 4 (quatro) números
 Calcule o quadrado para cada um
@@ -199,11 +199,9 @@ Mostre o resultado
 
 ---
 
-4. Construa um algoritmo para pagamento de comissão de vendedores de peças. <br>Considere que a comissão será de 5% do total da venda e que você tem seguintes dados:
-
-
-Preço unitário da peça
-Quantidade vendida
+7. Construa um algoritmo para pagamento de comissão de vendedores de peças. <br>Considere que a comissão será de 5% do total da venda e que você tem seguintes dados:
+- Preço unitário da peça
+- Quantidade vendida
 
 ---
 inputs:
