@@ -56,76 +56,75 @@ int main() {
    x = x0 + v0 * t + (.5)*a*(t*t); // formula
    cout << x << endl;
  
-   
  	//Letra d)
-   	int a_ = 2;
+   int a_ = 2;
  	int b_ = 1;
  	int c_ = 3;
-    int delta; // output
+   int delta; // output
 
- 	delta= (b_*b_) - 4*a_*c_;
+ 	delta= (b_*b_) - 4*a_*c_; // formula
+
  	cout << delta << endl; // print(delta)
  
  	
-    //Letra e)
-    float delta_u, tau;
-    float delta_q;
+   //Letra e)
+   float delta_u, tau;
+   float delta_q;
   	delta_u = 5;
-     tau = 3;
+   tau = 3;
 
-     //Equação
-     delta_q = delta_u + tau;
-        cout << delta_q << endl;
+   delta_q = delta_u + tau; // formula
+   cout << delta_q << endl;
     
+   //Letra f)
+   float R;
+   float C;
+   R= 2;
 
- //Letra f)
-    float R;
-    float C;
- R= 2;
+   C = 2 * 3.14 * R; // formula
+   cout << C << endl;
+     
+   // Letra g)
 
- C = 2 * 3.14 * R;
- cout << C << endl;
-     /*
- // Letra g)
-
- int x0; //output
-    x0 = (-(-7)+5) / 4;
- cout << x0 << endl;
-    
+   //  int x0; //output expect 3.0
+   x0 = (-(-7)+5) / 4; // formula
+   cout << x0 << endl; 
  
- // Letra h)
+   // Letra h)
     
- // int X0 = -7;
-    float insideSquareRoot = ((-7)*(-7)) - 4*2*3; 
- float x; // output 
+   // int X0 = -7;
+   float insideSquareRoot = ((-7)*(-7)) - 4*2*3; 
+   float x__; // output expect 3.0
  
-    float raiz = sqrt(insideSquareRoot);
+   float raiz = sqrt(insideSquareRoot);
     
- x = (-(-7) + sqrt(insideSquareRoot)) / (2*2);
-    // cout << raiz << endl;
- cout << x << endl;
+   x__ = (-(-7) + sqrt(insideSquareRoot)) / (2*2);
+   // cout << raiz << endl;
+   cout << x__ << endl;
     
- //Letra i)
- float tc;
- float tf = 2;
- tc = (5 * (tf - 32)) / 9; 
- cout << tc << endl;
+   //Letra i)
+   float tc;
+   float tf = 2;
+   tc = (5 * (tf - 32)) / 9; // formula
+   cout << tc << endl;
  
 
- //Letra j) bhaskara
- float a, b, c, delta;
-    float x1, x2; // outputs
-    a = 2;
- b = -7;
- c = 3;
- delta = (b*b) - 4*a*c;
-    // cout << delta << endl;
+   //Letra j) bhaskara
+   float a__, b__, c__, delta__;
+   float x1, x2; // outputs expect 3.0
+   a__ = 2;
+   b__ = -7;
+   c__ = 3;
+   delta__ = (b__*b__) - 4*a__*c__;
+   // cout << delta__ << endl;
  
- x1 = (-b + (sqrt(delta)) / 2*a);
- x2 = (-b - (sqrt(delta)) / 2*a);
+   x1 = (-b__ + sqrt(delta__)) / (2. * a__);
+   x2 = (-b__ - sqrt(delta__)) / (2. * a__);
+   // float tt = sqrt(delta__);
+   // cout << tt << endl;
 
- cout << x1 << endl;
- cout << x2 << endl;
- */
+   cout << x1 << endl;
+   cout << x2 << endl;
+ 
  return 0;
 }
