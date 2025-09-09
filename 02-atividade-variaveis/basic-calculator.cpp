@@ -2,65 +2,41 @@
 
 using namespace std;
 
-// void display(string label, float value, int op = 1) {
-void calculadora(float value, int op = 1) {
-    /* modes:
-        1 = "Adição/Soma"
-        2 = "Subtração"
-        3 = "Multiplicação"
-        4 = "Divisão"
-    */
-    if (op) {
-        switch(op) {
-            case 1:
-                // SOMA
-                cout << "Soma: " << value << endl;
-                break;
-            case 2:
-                // SUBTRACAO
-                cout << "Subtracao: " << value << endl;
-                break;
-            case 3:
-                // MULTIPLICACAO
-                cout << "Multiplicacao: " << value << endl;
-                break;
-            case 4:
-                // DIVISAO
-                cout << "Divisao: " << value << endl;
-                break;
-        }
+/* modes:
+    1 = "Adição/Soma"
+    2 = "Subtração"
+    3 = "Multiplicação"
+    4 = "Divisão"
+*/
+void calculadora(float a, float b, int op = 1) {
+    switch(op) {
+        case 1:
+            cout << "Soma: " << (a + b) << endl;
+            break;
+        case 2:
+            cout << "Subtracao: " << (a - b) << endl;
+            break;
+        case 3:
+            cout << "Multiplicacao: " << (a * b) << endl;
+            break;
+        case 4:
+            cout << "Divisao: " << (a / b) << endl;
+            break;
     }
-}
-
-float soma(float a, float b) {
-    return a + b;
-}
-
-float subtrai(float a, float b) {
-    return a - b;
-}
-
-float multiplica(float a, float b) {
-    return a * b;
-}
-
-float divide(float a, float b) {
-    return a / b;
 }
 
 int main() {
   float a, b;
-  float sum, sub, multi, divi;
   
   cout << "Insira o valor A: ";
   cin >> a;
   cout << "Insira o valor B: ";
   cin >> b;
 
-  calculadora(soma(a, b), 1);
-  calculadora(subtrai(a, b), 2);
-  calculadora(multiplica(a, b), 3);
-  calculadora(divide(a, b), 4);
+  calculadora(a, b, 1); // 1=SOMA
+  calculadora(a, b, 2); // 2=SUBTRAI
+  calculadora(a, b, 3); // 3=MULTIPLICA
+  calculadora(a, b, 4); // 4=DIVIDE
 
   return 0;
 }
