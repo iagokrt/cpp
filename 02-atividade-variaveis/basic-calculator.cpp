@@ -2,6 +2,52 @@
 
 using namespace std;
 
+// void display(string label, float value, int op = 1) {
+void calculadora(float value, int op = 1) {
+    /* modes:
+        1 = "Adição/Soma"
+        2 = "Subtração"
+        3 = "Multiplicação"
+        4 = "Divisão"
+    */
+    if (op) {
+        switch(op) {
+            case 1:
+                // SOMA
+                cout << "Soma: " << value << endl;
+                break;
+            case 2:
+                // SUBTRACAO
+                cout << "Subtracao: " << value << endl;
+                break;
+            case 3:
+                // MULTIPLICACAO
+                cout << "Multiplicacao: " << value << endl;
+                break;
+            case 4:
+                // DIVISAO
+                cout << "Divisao: " << value << endl;
+                break;
+        }
+    }
+}
+
+float soma(float a, float b) {
+    return a + b;
+}
+
+float subtrai(float a, float b) {
+    return a - b;
+}
+
+float multiplica(float a, float b) {
+    return a * b;
+}
+
+float divide(float a, float b) {
+    return a / b;
+}
+
 int main() {
   float a, b;
   float sum, sub, multi, divi;
@@ -11,15 +57,10 @@ int main() {
   cout << "Insira o valor B: ";
   cin >> b;
 
-  sum = a + b;
-  sub = a - b;
-  multi = a * b;
-  divi = a / b;
-
-  cout << "Soma: " << sum << endl;
-  cout << "Subtracao: " << sub << endl;
-  cout << "Multiplicacao: " << multi << endl;
-  cout << "Divisao: " << divi << endl;
+  calculadora(soma(a, b), 1);
+  calculadora(subtrai(a, b), 2);
+  calculadora(multiplica(a, b), 3);
+  calculadora(divide(a, b), 4);
 
   return 0;
 }
