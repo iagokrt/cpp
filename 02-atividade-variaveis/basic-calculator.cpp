@@ -3,34 +3,25 @@
 using namespace std;
 
 int main() {
-	/* Variáveis */
-	float a, b;
-    // cin.clear();
+  float a, b;
+  float sum, sub, multi, divi;
+  
+  cout << "Insira o valor A: ";
+  cin >> a;
+  cout << "Insira o valor B: ";
+  cin >> b;
 
-    float sum, sub, multiplicacao, divisao;
+  sum = a + b;
+  sub = a - b;
+  multi = a * b;
+  divi = a / b;
 
-    cout << "Insira o valor A:";
-    cin >> a;
-    cout << a;
-    
-    cout << "Insira o valor B:";
-    cin >> b;
-    cout << b;
+  cout << "Soma: " << sum << endl;
+  cout << "Subtracao: " << sub << endl;
+  cout << "Multiplicacao: " << multi << endl;
+  cout << "Divisao: " << divi << endl;
 
-    a = 2.5;
-    b = 0.5;
-
-    sum = a + b;
-    sub = a - b;
-    multiplicacao = a * b;
-    divisao = a / b;
-
-    cout << "Soma: " << sum << endl;
-    cout << "Subtracao: " << sub << endl;
-    cout << "Multiplicacao: " << multiplicacao << endl;
-    cout << "Divisao: " << divisao << endl;
-
-	return 0;
+  return 0;
 }
 
 /**
