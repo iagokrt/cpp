@@ -7,18 +7,27 @@ using namespace std;
 
 int main() {
 
-	int n, remainder3, remainder5;
+	int n, factor, resto3, resto5;
 
 	cout << "Digite um numero(int) para verificar se é divisivel por 3 ou 5 (exclusivo)" << endl;
 
 	cin >> n;
 
-	cout << n << endl;
+	// cout << n << endl;
 
-	if (n % 3 == 0 && n % 5 != 0) {
-		cout << n << " é divisível apenas por 3" << endl;
-	} else if (n % 5 == 0 && n % 3 != 0) {
-		cout << n << " é divisível apenas por 5" << endl;
+	//  v1 - clássico explícito
+	// if (n % 3 == 0 && n % 5 != 0) {
+	// 	cout << n << " é divisível apenas por 3" << endl;
+	// } else if (n % 5 == 0 && n % 3 != 0) {
+	// 	cout << n << " é divisível apenas por 5" << endl;
+	// }
+
+	// v2 - operador xor
+	resto3 = n % 3 == 0;
+	resto5 = n % 5 == 0;
+	if (resto3 ^ resto5) {
+		factor = resto3 ? 3 : 5;
+		cout << n << " é divisível apenas por " << factor << endl;
 	}
 
 	return 0;
