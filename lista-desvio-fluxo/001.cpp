@@ -48,3 +48,27 @@ int main() {
 
     return 0;
 }
+
+// int main() { 
+//     int n;
+
+//     cout << "Digite um numero:" << endl;
+
+//     cin >> n;
+
+//     // cout << "numero=" << n << endl;
+
+//     if (n % 2 == 0) {
+//         cout << "numero=" << n << " e par." << endl;
+//     } else  if (n % 2 != 0) {
+//         cout << "numero=" << n << " e impar." << endl;
+//     }
+
+//     if (n >= 0) {
+//         cout << "numero=" << n << " e positivo." << endl;
+//     } else {
+//         cout << "numero=" << n << " e negativo." << endl;
+//     }
+
+//     return 0;
+// }
