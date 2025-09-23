@@ -1,33 +1,35 @@
 #include <iostream>
 using namespace std;
 
-// int contadorDeQuebrados() {
+int coposQuebrados(int latas, int copos, int totalCoposQuebrados) {
+    if (latas > copos) {
+        totalCoposQuebrados += copos;
+        return totalCoposQuebrados;
+    } else {
+        return 0;
+    }
 
-// }
+}
 
 int main() {
     const int bandejas = 5;
     int latas, copos;
 
-    int totalCoposQuebrados = 0;
+    int main_totalCoposQuebrados = 0;
 
-    cout << "Quantidade Latas: " << endl;
-    cin >> latas;
+    for (int i = 1; i <= bandejas; i++) {
+        // cout << "bandeja " << i << endl;
+        
+        cout << "bandeja(" << i << ") Quantidade Latas: " << endl;
+        cin >> latas;
 
-    cout << "Quantidade Copos: " << endl;
-    cin >> copos;
+        cout << "bandeja(" << i << ") Quantidade Copos: " << endl;
+        cin >> copos;
 
-    cout << "bandejas: " << bandejas << endl;
-    cout << "Latas: " << latas << endl;
-    cout << "Copos: " << copos << endl;
-
-    if (latas > copos) {
-        // certamente deixara cair
-        totalCoposQuebrados += copos;
+        main_totalCoposQuebrados = coposQuebrados(latas, copos, main_totalCoposQuebrados);
     }
 
-    cout << "totalCoposQuebrados: " << totalCoposQuebrados << endl;
-
+    cout << main_totalCoposQuebrados << " copos quebrados" <<endl;
 
     return 0;
 }
