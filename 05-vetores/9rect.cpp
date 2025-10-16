@@ -17,50 +17,26 @@ Digite largura: 10
 int main() {
     int alt, larg;
     int i, j;
-    // float result;
-
-    vector<string> rowDraw;
-
-    // list<string> row;
-    list<string> rows = {"*", "*"};
-    // list<string> rows = {"*", "*"};
 
     list<string> column;
 
-    int size;
+    cout << "Digite Altura:";
+    cin >> alt;
 
-    alt = 3;
-    larg = 4;
+    cout << "Digite Largura:";
+    cin >> larg;
 
-    for (j = 0; j < alt; j++) {
+    for (j = 0; j < larg; j++) {
         column.push_back("*");
     }
     // cout << "j:" << j << endl;
 
-    for (i = 0; i < larg; i++) {
+    for (i = 0; i < alt; i++) {
         cout << endl;
         for (string chars: column) {
             cout << chars;
         }
     }
-    // for(string row: rows) {
-    //     cout << row;
-    // }
-
-    // para cada 'item' largura, adicionar um * no array rowDraw
-    // for (int j = 0; j < larg; j++) {
-    //     rowDraw.push_back("*");
-    //     cout << j  << ": " << "*" << endl;
-    // }
-
-    // para cada 'item' altura, adicionar 
-
-    // for (int i = 0; i < alt; i++) {
-    //     cout << rowDraw[i];
-    // }
-
-    // cout << "Digite o n1: " << endl;
-    // cin >> n1;
 
     return 0;
 }
