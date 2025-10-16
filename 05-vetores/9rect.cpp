@@ -1,6 +1,5 @@
 #include <iostream>
-#include <vector>
-#include <list> // teste
+#include <list>
 using namespace std;
 
 /**
