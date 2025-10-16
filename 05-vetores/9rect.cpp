@@ -1,4 +1,6 @@
 #include <iostream>
+#include <vector>
+#include <list> // teste
 using namespace std;
 
 /**
@@ -10,15 +12,55 @@ Digite altura: 3
 Digite largura: 10
 **********
 **********
-*********
+**********
 */
 int main() {
-    float n1, n2;
+    int alt, larg;
+    int i, j;
+    // float result;
 
-    float result;
+    vector<string> rowDraw;
 
-    cout << "Digite o n1: " << endl;
-    cin >> n1;
+    // list<string> row;
+    list<string> rows = {"*", "*"};
+    // list<string> rows = {"*", "*"};
+
+    list<string> column;
+
+    int size;
+
+    alt = 3;
+    larg = 4;
+
+    for (j = 0; j < alt; j++) {
+        column.push_back("*");
+    }
+    // cout << "j:" << j << endl;
+
+    for (i = 0; i < larg; i++) {
+        cout << endl;
+        for (string chars: column) {
+            cout << chars;
+        }
+    }
+    // for(string row: rows) {
+    //     cout << row;
+    // }
+
+    // para cada 'item' largura, adicionar um * no array rowDraw
+    // for (int j = 0; j < larg; j++) {
+    //     rowDraw.push_back("*");
+    //     cout << j  << ": " << "*" << endl;
+    // }
+
+    // para cada 'item' altura, adicionar 
+
+    // for (int i = 0; i < alt; i++) {
+    //     cout << rowDraw[i];
+    // }
+
+    // cout << "Digite o n1: " << endl;
+    // cin >> n1;
 
     return 0;
 }
