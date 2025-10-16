@@ -1,4 +1,5 @@
 #include <iostream>
+#include <vector>
 using namespace std;
 
 /**
@@ -14,8 +15,25 @@ int main() {
 
     float result;
 
-    cout << "Digite o n1: " << endl;
-    cin >> n1;
+    vector<float> valores = {1, -8, 9, 255, 2, 4, 6, 8, 10, 12};
+    // vector<float> valores = {2, 4, 6};
+
+    vector<float> valoresInversos;
+
+    for (float v : valores) {
+        // cout << v << endl;
+        valoresInversos.push_back(1 / v);
+    }
+
+    float sum = 0;
+    for (float vv : valoresInversos) {
+        sum += vv;
+        // cout << vv << endl;
+    }
+    // result = valores.size()/sum;
+    result = 10/sum;
+
+    cout << result << endl;
 
     return 0;
 }
