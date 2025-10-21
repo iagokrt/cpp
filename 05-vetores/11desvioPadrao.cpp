@@ -48,9 +48,9 @@ int main() {
     }
     
     // 4. variancia - pop.
-    // variancia = sum / 10;
+    variancia = sum / 10;
     // 5. raiz quadrada, desvio padrao
-    desvio_padrao = sqrt(sum / 10);
+    desvio_padrao = sqrt(variancia);
 
 
     cout << "Media: " << media_u << endl;
