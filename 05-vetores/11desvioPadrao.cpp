@@ -1,5 +1,5 @@
 #include <iostream>
-#include <vector>
+// #include <vector>
 #include <cmath>
 using namespace std;
 
@@ -13,7 +13,7 @@ Use a raiz quadrada: sqrt()
 Exiba no final a média e o desvio padrão.
 Desvio padrão: raiz sobre N do somatório do quadrado de cada valor (xi) descontado a média ( μ ).
 */
-int main() {
+/*int main() {
     // float n1, n2;
 
     float result;
@@ -55,6 +55,39 @@ int main() {
 
     cout << "Media: " << media_u << endl;
     cout << "Desvio-Padrao: " << desvio_padrao << endl;
+
+    return 0;
+} */
+int main() {
+    // Aloque o vetor de teste estaticamente:
+    // 0 - float valores[10] = {1, -8, 9, 255, ... }
+    // 1 - Calcula a média aritmética ( μ  na fórmula ).
+
+    // Desvio padrão: raiz sobre N do somatório do quadrado de cada valor (xi) descontado a média ( μ ).
+
+    //     Use a raiz quadrada: sqrt()
+    // Exiba no final a média e o desvio padrão.
+
+    float valores[10] = {1, -8, 9, 255, 2, 4, 6, 8, 10, 12};
+    // float desvio[10];
+
+    int i,j;
+    float soma = 0;
+    float media = 0;
+    float desvio = 0;
+
+    for (i = 0; i < 10; i++) {
+        soma += valores[i];
+    }
+    media = soma / 10;
+
+    for (j = 0; j < 10; j++) {
+        desvio += (valores[j] - media) * (valores[j] - media);
+    }
+
+    desvio = sqrt(desvio / 10);
+    cout << "media:" << media << endl;
+    cout << "desvio:" << desvio << endl;
 
     return 0;
 }
