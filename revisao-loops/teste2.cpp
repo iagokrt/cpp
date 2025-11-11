@@ -1,6 +1,18 @@
 #include <iostream>
 using namespace std;
 
+/*
+
+*/
+float calc_media(int valores_res[5], int total) {
+    int sum, i, media;
+    for (i = 0; i < 5; i++) {
+        sum += valores_res[i];
+    }
+    media = (sum / total);
+    return media; 
+}
+
 int main() {
 
     int valores_a[5] = {1, 2, 3, 4, 5};
@@ -67,11 +79,11 @@ int main() {
     //cout << "(expected)Nova lista de produtos (elemento a elemento):[101, 404, 909, 1616, 2525]" << endl; // TEST
 
     // CALCULAR MEDIA DO VETOR RESULTADO
-    for (i = 0; i < 5; i++) {
-        sum += valores_res[i];
-    }
-
-    media = (sum / 5);
+    media = calc_media(valores_res, 5);
+    // for (i = 0; i < 5; i++) {
+    //     sum += valores_res[i];
+    // }
+    // media = (sum / 5);
 
     cout << "Média dos elementos da lista de produtos: " << media << endl;
 
