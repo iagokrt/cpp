@@ -2,54 +2,50 @@
 using namespace std;
 
 /**
-Fazer uma função para cálculo da resistência equivalente da associação de 2 resistores (série ou paralelo) e montar um programa exemplo.
- A função deve receber os valores dos resistores mais um caractere que será s para série e p para paralelo.
+Fazer uma função para cálculo da resistência equivalente da associação de 2 resistores (série ou paralelo) e
+montar um programa exemplo.
 
-float associacao(float r1, float r2, char tipo):
- */
+A função deve receber os valores dos resistores mais um caractere que será s para série e p para paralelo.
 
-// string triangles(int a, int b, int c) {
-//     string definition;
+*/
 
-//      // if(condicao pra ser triangulo?) 
-//             // a + b > c
-//             // a + c > b
-//             // b + c > a
-//         // nao é triangulo?
-//     if ((a+b<c) || (a+c < b) || (b+c < a)) {
-//         return definition = "nao eh triangulo!";
-//     }
+float associacao(float r1, float r2, char tipo) {
 
-//     if (a == b && b == c) {
-//         definition = "Equilatero";
-//     } else if (a != b && b != c && c != a) {
-//         definition = "Escaleno";
-//     } else if (a == b || b == c || c == a) {
-//         definition = "Isosceles";
-//     } 
-//     // else {
-       
-//     // }
-//     return definition;
-// }
+    if (tipo == 's') {
+        return r1 + r2;
+    } else if (tipo == 'p') {
+        return (r1*r2) / (r1 + r2);
+    } else {
+        return -1;
+    }
+
+}
 
 int main() {
-    int a, b, c;
-    string result;
-    cout << "Hello World!" << endl;
 
-    // cout << "Digite A: " << endl;
-    // cin >> a;
+    int r1 = 10;
+    int r2 = 10;
+    // TEST serie = 20;
+    // TEST paralelo = 5;
 
-    // cout << "Digite B: " << endl;
-    // cin >> b;
-    
-    // cout << "Digite C: " << endl;
-    // cin >> c;
+    r1 = 6;
+    r2 = 12;
+    // TEST serie = 18;
+    // TEST paralelo = 4;
 
-    // result = triangles(a,b,c);
-    
-    // cout << result;
+    char tipo = 's';
+
+    tipo = 'p';
+
+    float resultado = 0;
+
+    resultado = associacao(r1, r2, tipo);
+
+    cout << "R1:" << r1 << endl;
+    cout << "R2:" << r2 << endl;
+    cout << "tipo:" << tipo << endl;
+
+    cout << resultado << endl;
 
     return 0;
 }
