@@ -11,7 +11,7 @@ Fibonacci até um enésimo número informador pelo usuário. A sequência é def
     Função: void fibonacci(int *vetor, int tamanho_max)
     Imprima o vetor no main contendo o resultado da sequência.
 
-Fn = Fn−1 + Fn−2
+Fn = F(n−1) + F(n−2)
 F1 = 1
 F2 = 1
 
@@ -27,28 +27,6 @@ void fib(int n) {
     int f_2 = 1;
 
     for (int i = 0; i < n; i++) {
-        // if (i == 0 || i == 1) {
-        if (i <=1) {
-            cout << f << endl;
-            continue;
-        }
-
-        f = f_1 + f_2;
-        f_2 = f_1;
-        f_1 = f;
-        cout << f << endl;
-    }
-
-}
-
-// com o vetor (preenche uma vetor contendo a sequencia de Fibonacci)
-void fib_v(int *vetor, int tamanho_max) {
-    int f = 1;
-    int f_1 = 1;
-    int f_2 = 1;
-
-    for (int i = 0; i < tamanho_max; i++) {
-        // if (i == 0 || i == 1) {
         if (i <=1) {
             cout << f << endl;
             continue;
@@ -71,13 +49,38 @@ int fibRecursivo(int n) {
     return fibRecursivo(n-1) + fibRecursivo(n-2);
 }
 
+// dentro de fib_v mexe no mesmo lugar da memoria que o main esta usando
+// com o vetor em endereço real do array
+void fib_v(long long *vetor, int tamanho_max) {
+    long long f;
+    long long f_1 = 1;
+    long long f_2 = 0;
+
+    for (int i = 0; i < tamanho_max; i++) {
+        if (i == 0) {
+            vetor[i] = 0;
+            continue;
+        }
+        if (i == 1) {
+            vetor[i] = 1;
+            continue;
+        }
+
+        f = f_1 + f_2;
+        f_2 = f_1;
+        f_1 = f;
+        vetor[i] = f;
+    }
+
+}
+
 int main() {
     int a;
-    // string result;
+    
     cout << "Digite numero de 1 a 50:";
     cout << endl << "-- Fibonacci Sequencia --" << endl;
 
-    int vetor[50]; // delcarando o vetor estatico de teste
+    long long vetor[50]; // delcarando o vetor estatico de teste
 
     cin >> a;
 
@@ -88,18 +91,15 @@ int main() {
         return 0;
     }
 
-    cout << "fib v:";
+    cout << "Fibonacci:" << endl;
 
-    // fib(a);
     fib_v(vetor, a);
 
+    for (int i = 0; i < a; i++) {
+        cout << vetor[i] << endl;
+    }
+
     cout << " " << endl;
-
-    // cout << "fibRecursivo:" << endl;
-
-    // for (int i = 0; i < a; i++) {
-    //     cout << fibRecursivo(i) << endl;
-    // }
 
     return 0;
 }
