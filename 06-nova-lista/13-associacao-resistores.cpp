@@ -25,25 +25,15 @@ int main() {
 
     int r1 = 10;
     int r2 = 10;
-    // TEST serie = 20;
-    // TEST paralelo = 5;
-
-    r1 = 6;
-    r2 = 12;
-    // TEST serie = 18;
-    // TEST paralelo = 4;
-
     char tipo = 's';
 
-    tipo = 'p';
+    cin >> r1;
+    cin >> r2;
+    cin >> tipo;
 
     float resultado = 0;
 
     resultado = associacao(r1, r2, tipo);
-
-    cout << "R1:" << r1 << endl;
-    cout << "R2:" << r2 << endl;
-    cout << "tipo:" << tipo << endl;
 
     cout << resultado << endl;
 

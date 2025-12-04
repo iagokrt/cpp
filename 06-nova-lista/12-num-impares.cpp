@@ -6,22 +6,31 @@ Faça uma função em C++ que imprime números ímpares de 0 a um limite superio
 O limite superior deve ser incluído se for ímpar.
  */
 
-void impares(int num) {
-
-    if (num % 2 == 1) {
-        cout << num << endl;
+void impares(int limiteSuperior) {
+    int i;
+    
+    cout << "[";
+    
+    for (i = 0; i < limiteSuperior; i++) {
+        if (i % 2 == 1) {
+            cout << i << ", ";
+        }
     }
+
+    if (limiteSuperior % 2 == 1) {
+        cout << limiteSuperior << "";
+    }
+
+    cout << "]";
 
 }
 
 int main() {
-    int limiteSuperior = 11;
+    int limiteSuperior = 0;
 
-    int i;
+    cin >> limiteSuperior;
 
-    for (i =0; i <= limiteSuperior; i++) {
-        impares(i);
-    }
+    impares(limiteSuperior);
 
     return 0;
 }
