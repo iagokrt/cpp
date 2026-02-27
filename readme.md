@@ -1,49 +1,48 @@
-# Estudos de Lógica em C++  
+# Estudos de Lógica em C++
 
-Repositório criado para estudos de lógica de programação utilizando **C++**.  
-Aqui estarão disponíveis programas simples, cada um resolvendo um problema específico.  
+Repositório para praticar lógica de programação com **C++**, organizado por listas e temas (algoritmos, desvio de fluxo, loops, vetores e revisões).
 
-- O primeiro commit contém apenas o clássico **Hello World**.  
-- Novos exercícios serão adicionados conforme avanço nos estudos.  
-- Os arquivos `.exe` (binários compilados) **não estão versionados** (ignorados pelo `.gitignore`).  
+## 📚 Documentação
 
----
+- Guia resumido dos exercícios: [`docs/exercicios.md`](docs/exercicios.md)
+- TODO de Orientação a Objetos: [`docs/todo-poo.md`](docs/todo-poo.md)
 
-## 🚀 Como rodar os exemplos
+## 🗂️ Estrutura atual
 
-### 1. Instalar o compilador `g++`
-
-#### Windows
-1. Baixe o **MinGW-w64** em: [https://winlibs.com](https://winlibs.com)  
-2. Extraia em uma pasta, ex: `C:\mingw64`  
-3. Adicione no **PATH** do sistema:  
-4. Abra o **Prompt de Comando** e verifique:
-```bash
-g++ --version
+```text
+cpp/
+├── 01-algoritmos/
+├── 02-atividade-variaveis/
+├── 03-lista-desvio-fluxo/
+├── 04-loops/
+├── 05-vetores/
+├── 06-nova-lista/
+├── revisao-loops/
+├── docs/
+├── samples/
+├── hello.cpp
+├── main.cpp
+└── readme.md
 ```
-### 2. Compilar e rodar
 
-Navegue até a pasta do repositório e compile qualquer arquivo .cpp:
+## 🚀 Como compilar e executar
+
+### Linux / macOS
 ```bash
-g++ nome_do_arquivo.cpp -o program
+g++ caminho/arquivo.cpp -o programa
 ./programa
 ```
-No Windows, o comando para executar será:
+
+### Windows (MinGW)
 ```bash
-./program.exe
+g++ caminho\\arquivo.cpp -o programa.exe
+./programa.exe
 ```
 
-## 📂 Estrutura do Repositório
+> Dica: para validar se o compilador está instalado, rode `g++ --version`.
 
-Por enquanto, todos os arquivos .cpp ficam soltos no root da pasta cpp:
-```plaintext
-cpp/
-├── hello.cpp        # primeiro commit
-├── outro_exemplo.cpp
-└── ...
-```
-## 📌 Próximos Passos
+## ✅ Objetivo do repositório
 
-- Adicionar novas resoluções de problemas em C++.
-
-- Possivelmente organizar em subpastas futuramente (ex: basico/, estruturas/, etc).
+- Manter exercícios curtos e progressivos de lógica.
+- Evoluir para soluções com melhor organização e reaproveitamento de código.
+- Incluir uma trilha de exercícios de **POO em C++** (ver TODO).
