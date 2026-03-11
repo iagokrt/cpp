@@ -1,14 +1,20 @@
 #include <iostream>
 using namespace std;
-
+/**
+ Solicite ao usuário sua idade e determine se ele é considerado adulto (idade maior ou igual 
+  a 18) ou não. Se for adulto, coloque true na saída padrão, caso contrário coloque false.
+*/
+string maioridade(int idade) {
+  return (idade >= 18) ? "true" : "false";
+}
 int main() {
-  float a, b;
+  int idade;
   
-  cout << "Insira o valor A: ";
-  cin >> a;
+  cout << "Insira a sua idade: " << endl;
+  cin >> idade;
 
-  cout << "Valor: " << a;
+  cout << maioridade(idade);
   
-  system("pause");
+  // system("pause");
   return 0;
 }
