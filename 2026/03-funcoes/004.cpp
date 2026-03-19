@@ -4,7 +4,8 @@ using namespace std;
 /**
 4) Crie uma função chamada "Troca" que recebe na entrada padrão (i.e., cin) dois números
 inteiros como parâmetros por referência (utilizando a sintaxe específica do C++ para
-parâmetros por referência) e troca seus valores. Imprima na saída padrão (i.e., cout) os
+parâmetros por referência) e troca seus valores. 
+Imprima na saída padrão (i.e., cout) os
 valores antes e depois da troca. A interação com usuário deve ser feita no console,
 conforme exemplo abaixo:
 
@@ -16,6 +17,19 @@ Agora x = 3 e y = 2
 
 */
 
+// com ponteiro
+void Troca_p(int *a, int *b) {
+  int tempo = *a;
+  *a = *b;
+  *b = tempo;
+}
+
+void Troca(int &a, int &b) {
+  int temporaria = a;
+  a = b;
+  b = temporaria;
+}
+
 int main() {
   int a, b;
 
@@ -24,10 +38,26 @@ int main() {
   cout << "Insira o valor B: ";
   cin >> b;
 
-  cout << "Soma: " << (a + b) << endl;
-  cout << "Subtracao: " << (a - b) << endl;
-  cout << "Multiplicacao: " << (a * b) << endl;
-  cout << "Divisao: " << (a / b) << endl;
+  cout << "A: " << a << endl;
+
+  cout << "B: " << b << endl;
+
+  cout << "TROCA" << endl;
+
+  // Troca_p(&a, &b); // com ponteiro
+  Troca(a, b); // com referencia
+
+  cout << "A: " << a << endl;
+
+  cout << "B: " << b << endl;
 
   return 0;
 }
+
+// obs
+/**
+Ponteiro	| Referência
+explícito	| implícito
+você vê o endereço |	você não vê
+
+ */
