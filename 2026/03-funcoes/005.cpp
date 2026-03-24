@@ -1,4 +1,6 @@
 #include <iostream>
+// #include <cstdio> // printf
+#include <iomanip> // setprecision
 using namespace std;
 
 /**
@@ -20,29 +22,23 @@ using namespace std;
 
 */
 
-// void Troca (float *x, float *y) {
-//   float temp = *x;
-//   *x = *y;
-//   *y = temp;
-// }
+void Troca(float *a, float *b) {
+  float temp = *a;
+  *a = *b;
+  *b = temp;
+}
 
 void OrdenaTres(float *x, float *y, float *z) {
   float temp;
 
   if (*x > *y) {
-    temp = *x;
-    *x = *y;
-    *y = temp;
+    Troca(x, y);
   }
   if (*x > *z) {
-    temp = *x;
-    *x = *z;
-    *z = temp;
+    Troca(x, z);
   }
   if (*y > *z) {
-    temp = *y;
-    *y = *z;
-    *z = temp;
+    Troca(y, z);
   }
 
 }
@@ -59,8 +55,10 @@ int main() {
 
   OrdenaTres(&x, &y, &z);
 
-  // cout << "A sequencia ordenada eh x = " << x << ", y = " << y << " e z = " << z << endl;
-  printf("A sequencia ordenada eh x = %.1f, y = %.1f e z = %.1f\n", x, y, z);
-  
+  // printf("A sequencia ordenada eh x = %.1f, y = %.1f e z = %.1f\n", x, y, z);
+  cout << fixed << setprecision(1);
+
+  cout << "A sequencia ordenada eh x = " << x << ", y = " << y << " e z = " << z << endl;
+
   return 0;
 }
