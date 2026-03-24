@@ -15,49 +15,35 @@ Insira o valor em y: 3
 
 Agora x = 3 e y = 2
 
-*/
-
 // com ponteiro
 void Troca_p(int *a, int *b) {
   int tempo = *a;
   *a = *b;
   *b = tempo;
 }
+uso: Troca_p(&x, &y); // com ponteiro
 
-void Troca(int &a, int &b) {
-  int temporaria = a;
-  a = b;
-  b = temporaria;
+*/
+
+
+void Troca(int &x, int &y) {
+  int temporaria = x;
+  x = y;
+  y = temporaria;
 }
 
 int main() {
-  int a, b;
+  int x, y;
 
-  cout << "Insira o valor A: ";
-  cin >> a;
-  cout << "Insira o valor B: ";
-  cin >> b;
+  cout << "Insira o valor em x: ";
+  cin >> x;
 
-  cout << "A: " << a << endl;
+  cout << "Insira o valor y: ";
+  cin >> y;
 
-  cout << "B: " << b << endl;
+  Troca(x, y); // com referencia
 
-  cout << "TROCA" << endl;
-
-  // Troca_p(&a, &b); // com ponteiro
-  Troca(a, b); // com referencia
-
-  cout << "A: " << a << endl;
-
-  cout << "B: " << b << endl;
+  cout << "Agora x = " << x << " e y = " << y << endl;
 
   return 0;
 }
-
-// obs
-/**
-Ponteiro	| Referência
-explícito	| implícito
-você vê o endereço |	você não vê
-
- */
