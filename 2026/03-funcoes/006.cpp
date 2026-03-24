@@ -16,8 +16,8 @@ using namespace std;
 
 */
 
-void CalculaMedia2(float a, float b, float c, float *d) {
-  *d = (a + b + c) / 3;
+void CalculaMedia2(float a, float b, float c, float &d) {
+  d = (a + b + c) / 3;
 }
 
 int main(int argc, char** argv) {
@@ -32,7 +32,7 @@ int main(int argc, char** argv) {
   b = stof(argv[2]);
   c = stof(argv[3]);
 
-  CalculaMedia2(a, b, c, &d);
+  CalculaMedia2(a, b, c, d);
 
   cout << d;
 
