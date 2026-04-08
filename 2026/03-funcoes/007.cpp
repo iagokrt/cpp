@@ -26,21 +26,6 @@ Media = 4.5
  
 */
  
-  /*
-  first attempt
-  if (a < 0) {
-    for (i = a; i < 0; i++) {
-        result += i;
-    }
-    return result / (a*-1);
-  } else {
-    for (i = a; i <= b; i++) {
-        result += i;
-    }
-    return result / i;
-  }
-  */
- 
 float media(int a, int b) {
   float sum = 0;
   int i = 0;
@@ -50,21 +35,19 @@ float media(int a, int b) {
     //cout << "i:" << i << " ";
     if (a < 0) {
         if (i < 0) {
-            sum += i;
-            count++;
+          sum += i;
+          count++;
         } else {
-            //cout << endl;
-            //cout << "Soma:" << sum;
-            //cout << "Qtd:" << count;
-            //return sum / count;
+          //cout << endl;
+          //cout << "Soma:" << sum;
+          //cout << "Qtd:" << count;
+          //return sum / count;
         }
     } else {
-        //cout << endl;
-        
-        sum += i;
-        count++;
-        //cout << "Soma:" << sum << endl;
-        //cout << "Qtd:" << count << endl;
+      sum += i;
+      count++;
+      //cout << "Soma:" << sum << endl;
+      //cout << "Qtd:" << count << endl;
     }
   }
   return sum / count;

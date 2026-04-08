@@ -7,7 +7,7 @@
 
 **4)  O que é um montador?**
 
-    R.: Um montador (assemblier) é um programa que converte código escrito em linguagem assembly (linguagem de baixo nível) para código de máquina executável.
+    R.: Um montador (assembler) é um programa que converte código escrito em linguagem assembly (linguagem de baixo nível) para código de máquina executável.
 
 **5)  O que é um ligador?**
 
