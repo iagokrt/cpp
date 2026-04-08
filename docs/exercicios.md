@@ -1,94 +1,110 @@
-# Guia rápido dos exercícios
+# Guia dos exercícios
 
-Este documento resume, de forma breve, o objetivo de cada exercício do repositório e traz observações de estudo/manutenção.
+Este documento resume a organização do repositório e destaca, com mais detalhe, a trilha `2026`, que hoje é a parte mais consistente do material.
 
-## 01-algoritmos
+## Visão rápida das pastas
 
-| Arquivo | Descrição breve | Observações |
-|---|---|---|
-| `1.cpp` | Calcula o dobro de um número real. | Bom para revisar entrada/saída e tipos reais. |
-| `2.cpp` | Calcula área de uma sala a partir de comprimento e largura. | Exercício introdutório de multiplicação e variáveis. |
-| `3.cpp` | Calcula salário reajustado por percentual (0 a 1). | Reforça regra de três/percentual com `float`/`double`. |
-| `4.cpp` | Calcula valor final após desconto percentual. | Similar ao exercício 3, focado em desconto. |
-| `5.cpp` | Conversão de moeda (cotação do dólar e valores). | Útil para reforçar formatação e operações monetárias. |
-| `6.cpp` | Lê 4 números e calcula quadrado de cada um. | Pode evoluir para uso de vetores/funções. |
-| `7.cpp` | Calcula comissão de vendedor (5% do total). | Bom caso de negócio simples com múltiplas entradas. |
+| Pasta | Foco principal |
+|---|---|
+| `01-algoritmos/` | Exercícios iniciais de lógica, entrada, saída e operações simples. |
+| `02-atividade-variaveis/` | Operadores, expressões e testes básicos com variáveis. |
+| `03-lista-desvio-fluxo/` | Condicionais, classificações e problemas de decisão. |
+| `04-loops/` | Repetição, validação de entrada e cálculos iterativos. |
+| `05-vetores/` | Vetores, média harmônica, desvio padrão e impressão formatada. |
+| `06-nova-lista/` | Funções e exercícios numéricos complementares. |
+| `revisao-loops/` | Revisões de laços, recursão e problemas curtos. |
+| `2026/` | Trilha mais organizada de estudos por módulo, com listas e apoio teórico. |
+| `samples/` | Materiais de referência sobre temas específicos de programação. |
 
-## 02-atividade-variaveis
+## Trilha `2026`
 
-| Arquivo | Descrição breve | Observações |
-|---|---|---|
-| `basic-calculator.cpp` | Calculadora básica com operações por modo. | Excelente para treinar `switch`/fluxo condicional. |
-| `operators.cpp` | Testes com operadores e variáveis. | Pode ser usado como laboratório rápido de sintaxe. |
-| `solution.cpp` | Lista de exercícios com variáveis/expressões. | Arquivo mais “misto”; vale quebrar em funções no futuro. |
-| `teste.cpp` | Hello World simples. | Arquivo de teste/validação de ambiente. |
+### `2026/01-introducao`
 
-## 03-lista-desvio-fluxo
+| Arquivo | Descrição breve |
+|---|---|
+| `practical.cpp` | Arquivo de prática inicial para testar compilação, execução e estrutura básica de um programa C++. |
 
-| Arquivo | Descrição breve | Observações |
-|---|---|---|
-| `001.cpp` | Informa se número é par/ímpar e positivo/negativo. | Boa prática de condicionais compostas. |
-| `002.cpp` | Análise de renda x prestação (aprovação/reprovação). | Regra clássica de crédito simples. |
-| `003.cpp` | Verifica se um ano é bissexto. | Pode ser comparado com `009.cpp` (função dedicada). |
-| `004.cpp` | Calcula IMC e classifica faixa. | Ideal para revisar cadeias de `if/else if`. |
-| `005.cpp` | Verifica divisibilidade por 3 ou 5, mas não por ambos. | Exercício ótimo para lógica booleana (XOR). |
-| `006.cpp` | Classificação de triângulo com base em lados. | Reforça validação de condição de existência. |
-| `007.cpp` | Cálculo de raízes de equação de 2º grau. | Validação de delta e possíveis raízes. |
-| `008.cpp` | (arquivo vazio/no estado atual). | Pendência: implementar enunciado. |
-| `009.cpp` | Função que verifica ano bissexto. | Versão funcional/reutilizável do tema de `003.cpp`. |
-| `010.cpp` | Verifica se bola cabe em caixa (dimensões). | Problema de comparação geométrica simples. |
-| `011.cpp` | Problema de latas/copos quebrados. | Bom para revisar função com retorno. |
-| `4_raizes.cpp` | Variação de Bhaskara/raízes. | Similar a `007.cpp`; pode consolidar para evitar duplicação. |
-| `exercicio_p1.cpp` | Desconto em combustível por tipo/litros. | Simula problema de prova com regras de negócio. |
+### `2026/02-variaveis`
 
-## 04-loops
+Esta pasta reúne uma sequência numerada de 9 exercícios (`001.cpp` a `009.cpp`) focados em fundamentos.
 
-| Arquivo | Descrição breve | Observações |
-|---|---|---|
-| `44-a-47.cpp` | Divisão com validação de divisor não zero (repetição). | Reforça entrada válida com laços. |
-| `48-a-49.cpp` | Média de notas com validação e opção de novo cálculo. | Bom treino de loop com controle por resposta do usuário. |
-| `divisao-metodo-sucetivas.cpp` | Divisão sem `/` usando subtrações sucessivas. | Exercício clássico de laços e aritmética inteira. |
-| `fatorial.cpp` | Cálculo de fatorial com validação de entrada. | Base para comparar versão iterativa vs recursiva. |
+| Grupo | Conteúdo |
+|---|---|
+| Entrada e saída | Leitura de dados pelo `cin` e exibição com `cout`. |
+| Operações básicas | Soma, subtração, multiplicação, divisão e expressões aritméticas. |
+| Argumentos de linha de comando | Exemplos com `argc` e `argv`, como em `001.cpp`. |
+| Validação simples | Tratamento básico de parâmetros e uso de conversão com `stoi`. |
 
-## 05-vetores
+Observação: em alguns arquivos há enunciados diretamente no código, o que ajuda a usar a pasta como material de aula.
 
-| Arquivo | Descrição breve | Observações |
-|---|---|---|
-| `8vetores.cpp` | Leitura de 10 valores e cálculos sobre o vetor. | Comentário indica exercício incompleto; revisar. |
-| `9rect.cpp` | Imprime retângulo de asteriscos por altura/largura. | Mistura laço com “desenho” textual. |
-| `10mediaHarmonica.cpp` | Calcula média harmônica de 10 números. | Atenção para divisão por zero nos dados. |
-| `11desvioPadrao.cpp` | Calcula desvio padrão de 10 números. | Reforça média, potência e raiz quadrada. |
+### `2026/03-funcoes`
 
-## 06-nova-lista
+Esta pasta contém 10 exercícios (`001.cpp` a `010.cpp`) dedicados ao uso de funções.
 
-| Arquivo | Descrição breve | Observações |
-|---|---|---|
-| `12-num-impares.cpp` | Função que imprime ímpares até limite informado. | Ótimo para praticar função com parâmetro simples. |
-| `13-associacao-resistores.cpp` | Resistência equivalente em série/paralelo. | Inclui regra física útil em forma de função. |
-| `14-desvio-padrao.cpp` | Nova versão do cálculo de desvio padrão. | Pode compartilhar lógica com `05-vetores/11desvioPadrao.cpp`. |
-| `15-fibo.cpp` | Preenche vetor com sequência de Fibonacci até N. | Boa base para discutir complexidade e limites de tipo. |
+| Tema | Exemplos presentes |
+|---|---|
+| Parâmetros e retorno | Funções que recebem valores e devolvem resultados numéricos. |
+| Decomposição de lógica | Separação entre leitura, processamento e saída. |
+| Intervalos e médias | Problemas como o de `007.cpp`, que calcula média em um intervalo com regras específicas. |
+| Reaproveitamento | Estrutura que já aponta para uma escrita mais modular do código. |
 
-## Revisão e arquivos utilitários
+É uma boa pasta para revisar assinatura de função, retorno, precisão numérica e organização do `main`.
 
-| Arquivo | Descrição breve | Observações |
-|---|---|---|
-| `revisao-loops/5.cpp` | Soma números até o usuário digitar 0. | Loop sentinela clássico. |
-| `revisao-loops/6.cpp` | Divisão por subtrações sucessivas (revisão). | Tema repetido para fixação. |
-| `revisao-loops/7.cpp` | Fatorial com função recursiva. | Excelente para comparar com versão iterativa. |
-| `revisao-loops/8.cpp` | Arquivo vazio/no estado atual. | Pendência de implementação. |
-| `revisao-loops/9.cpp` | Arquivo vazio/no estado atual. | Pendência de implementação. |
-| `revisao-loops/10.cpp` | Arquivo vazio/no estado atual. | Pendência de implementação. |
-| `revisao-loops/11.cpp` | Arquivo vazio/no estado atual. | Pendência de implementação. |
-| `revisao-loops/exponential.cpp` | Potência por recursão (`base^exp`). | Bom exercício de recursividade básica. |
-| `revisao-loops/teste1.cpp` | Conversão de Celsius para Fahrenheit. | Função simples para praticar assinatura e retorno. |
-| `revisao-loops/teste2.cpp` | Cálculo de média com vetor fixo. | Útil para revisar arrays e acumuladores. |
-| `hello.cpp` e `main.cpp` | Exemplo inicial/entrada do projeto. | Marca início do repositório e testes iniciais. |
+### `2026/04-classes-objetos`
 
----
+Esta é a pasta de orientação a objetos da trilha.
 
-## Sugestões rápidas de melhoria futura
+| Item | Descrição |
+|---|---|
+| `tutorial.md` | Explica a diferença entre declaração de interface e implementação em classes. |
+| `_12345/main.cpp` | Exemplo principal de uso de objetos `Point` e `Rectangle`. |
+| `_12345/Point.h` e `_12345/Point.cpp` | Declaração e implementação da classe `Point`. |
+| `_12345/Rectangle.h` e `_12345/Rectangle.cpp` | Declaração e implementação da classe `Rectangle`. |
+| `_12345/hello_world.zip` | Arquivo compactado de apoio presente dentro do exemplo. |
 
-1. Criar padrão único de nomes (`snake_case` ou `kebab-case`) para arquivos.
-2. Separar exercícios por tema e por nível (iniciante/intermediário).
-3. Adicionar um enunciado curto no topo de **todo** arquivo `.cpp`.
-4. Padronizar saída e mensagens para facilitar correção automática.
+Observação: as pastas `67/` e `89/` existem, mas no estado atual estão vazias.
+
+### `2026/LISTAS`
+
+Material de apoio em PDF para acompanhar a trilha:
+
+| Arquivo | Tema |
+|---|---|
+| `01_LISTA_INTRO.pdf` | Introdução |
+| `02_LISTA_EXP_VARIAVEIS.pdf` | Expressões e variáveis |
+| `03_LISTA_FUNCOES.pdf` | Funções |
+| `04_LISTA_CLASSES_OBJETOS.pdf` | Classes e objetos |
+
+### `2026/utils`
+
+Pasta com exemplos de apoio e anotações rápidas.
+
+| Arquivo | Descrição breve |
+|---|---|
+| `argv_types.md` | Resumo sobre tipos e argumentos recebidos por `main`. |
+| `entrada_padrao.cpp` | Exemplo de leitura pela entrada padrão. |
+| `exemplo_basico.cpp` | Exemplo simples de estrutura de programa. |
+| `factorial.cpp` | Implementação de fatorial. |
+| `formula_juros_compostos.cpp` | Exemplo com fórmula matemática aplicada. |
+| `media_desvioPadrao.cpp` | Estatística básica com média e desvio padrão. |
+| `ordenacao_ponteiro.cpp` | Experimentos com ordenação e ponteiros. |
+| `ponteiro_referencia.cpp` | Diferença prática entre ponteiro e referência. |
+| `emule_robot_pt1.cpp` | Exemplo utilitário específico mantido como estudo. |
+| `teoria.md` | Perguntas e respostas sobre compilador, montador, ligador, toolchain e headers. |
+
+## Pastas anteriores
+
+As pastas fora de `2026` continuam úteis como histórico de exercícios e revisão:
+
+- `01-algoritmos/`: primeiros problemas numéricos e geométricos.
+- `02-atividade-variaveis/`: testes com operadores e pequenas calculadoras.
+- `03-lista-desvio-fluxo/`: decisões com `if`, `else` e problemas clássicos.
+- `04-loops/` e `revisao-loops/`: repetição, sentinelas, recursão e validação.
+- `05-vetores/` e `06-nova-lista/`: estatística básica, Fibonacci e funções auxiliares.
+
+## Sugestões de melhoria futura
+
+1. Padronizar nomes dos arquivos entre trilhas antigas e a trilha `2026`.
+2. Adicionar um enunciado curto no topo de todos os exercícios que ainda não têm descrição.
+3. Criar sub-readmes por pasta para facilitar navegação.
+4. Indicar quais arquivos já estão prontos para aula, revisão ou refatoração.
