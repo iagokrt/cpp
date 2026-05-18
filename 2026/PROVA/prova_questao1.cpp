@@ -50,10 +50,10 @@ int main(int argc, char *argv[]) {
 	}
 
 	float s = 0; // input
-	//float sMin = stof(argv[1]); // impossivel testar sem linha de comando
+	// float sMin = stof(argv[1]); // impossivel testar sem linha de comando
 	float sMin = 10;
 
-	//float sMax = stof(argv[2]); // impossivel testar sem linha de comando
+	// float sMax = stof(argv[2]); // impossivel testar sem linha de comando
 	float sMax = 110;
 
 	// a diferença sMax- sMin nao seja zero para evitar erros de divisao
