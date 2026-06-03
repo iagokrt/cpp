@@ -25,25 +25,8 @@ uso: Troca_p(&x, &y); // com ponteiro
 
 */
 
-
-void Troca(int &x, int &y) {
-  int temporaria = x;
-  x = y;
-  y = temporaria;
-}
-
 int main() {
   int x, y;
-
-  cout << "Insira o valor em x: ";
-  cin >> x;
-
-  cout << "Insira o valor y: ";
-  cin >> y;
-
-  Troca(x, y); // com referencia
-
-  cout << "Agora x = " << x << " e y = " << y << endl;
 
   return 0;
 }

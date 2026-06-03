@@ -12,26 +12,10 @@ Caso contrário, deve imprimir no console, o valor da média.
 – que estão em formato texto/string – em valores do tipo float.)
 */
 
-float CalculaMedia(float a, float b, float c) {
-  return ( (a+b+c) / 3);
-}
 
 int main(int argc, char** argv) {
   float a, b, c;
   float mean;
-
-  if (argc < 4) {
-    cout << "uso: prg A B C. \n";
-    return 1;
-  }
-
-  a = stof(argv[1]);
-  b = stof(argv[2]);
-  c = stof(argv[3]);
-
-  mean = CalculaMedia(a,b,c);
-
-  printf("%.2f\n", mean);
 
   // Formatação de saída (3 jeitos):
   // 1) printf (C-style) -> simples e direto, define tudo na hora (ex: "%.2f\n")

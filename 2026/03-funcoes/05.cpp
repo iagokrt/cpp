@@ -22,43 +22,8 @@ using namespace std;
 
 */
 
-void Troca(float *a, float *b) {
-  float temp = *a;
-  *a = *b;
-  *b = temp;
-}
-
-void OrdenaTres(float *x, float *y, float *z) {
-  float temp;
-
-  if (*x > *y) {
-    Troca(x, y);
-  }
-  if (*x > *z) {
-    Troca(x, z);
-  }
-  if (*y > *z) {
-    Troca(y, z);
-  }
-
-}
-
 int main() {
   float x, y, z;
-
-  cout << "Insira o valor em x: ";
-  cin >> x;
-  cout << "Insira o valor em y: ";
-  cin >> y;
-  cout << "Insira o valor em z: ";
-  cin >> z;
-
-  OrdenaTres(&x, &y, &z);
-
-  // printf("A sequencia ordenada eh x = %.1f, y = %.1f e z = %.1f\n", x, y, z);
-  cout << fixed << setprecision(1);
-
-  cout << "A sequencia ordenada eh x = " << x << ", y = " << y << " e z = " << z << endl;
 
   return 0;
 }
