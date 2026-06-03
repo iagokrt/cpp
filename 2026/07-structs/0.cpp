@@ -25,7 +25,6 @@ using namespace std;
 
 // 12
 
-
 int main() {
     cout << "hello";
 
