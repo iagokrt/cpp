@@ -7,5 +7,14 @@ devem ser passadas através da entrada padrão.
 */
 
 int main() {
+  int l, a;
+    
+  cout << "Digite Largura:";
+  cin >> l;
+  cout << "Digite Altura:";
+  cin >> a;
+  
+  cout << "Area: " << l * a << endl;
+
   return 0;
 }

@@ -13,10 +13,10 @@ int main() {
     cout << "Digite B:";
     cin >> b;
 
-    cout << a + b << endl;
-    cout << a - b << endl;
-    cout << a * b << endl;
-    cout << a / b << endl;
+    cout << "Add:" << a + b << endl;
+    cout << "Sub:" << a - b << endl;
+    cout << "Mult:" << a * b << endl;
+    cout << "Div:" << a / b << endl;
 
     return 0;
 }

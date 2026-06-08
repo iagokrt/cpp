@@ -9,6 +9,12 @@ entrada padrão.
 */
 
 int main(int argc, char** argv) {
+  int radius;
+    
+  cout << "Digite Raio: ";
+  cin >> radius;
+
+  cout << "area:" << radius * radius * M_PI << endl;
 
   return 0;
 }

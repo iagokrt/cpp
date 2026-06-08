@@ -8,12 +8,14 @@ using namespace std;
 */
 
 int main(int argc, char** argv) {
-  if (argc < 2) {
-    cout << "Insira o valor temperatura (grau Celsius) ao executar o programa. \n";
-    return 1;
-  }
+  float celsius, fahrenheit;
+    
+  cout << "Digite Celsius:" << endl;
+  cin >> celsius;
 
+  fahrenheit = (celsius*9/5)+32;
 
+  cout << "Fahrenheit: " << fahrenheit << endl;
   
   return 0;
 }
