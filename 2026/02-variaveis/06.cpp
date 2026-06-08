@@ -37,16 +37,5 @@ int main() {
 
   cout << "[CAMBIO]: [Conversao] " << result << endl;
 
-  // if (opt == 1) {
-  //   cout << "Cotacao Dolar: " << endl;
-  //   cin >> cotacao;
-  //   result = convert(valorEmReais, cotacao);
-  // } else if (opt == 2) {
-  //   cout << "Cotacao Euro: " << endl;
-  //   cin >> cotacao;
-  //   result = convert(valorEmReais, cotacao);
-  // }
-
-
   return 0;
 }
