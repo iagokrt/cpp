@@ -1,13 +1,13 @@
 # C++ studies
 
-Repositorio de estudos e exercicios em C++.
+Repositório de estudos e exercicios em C++.
 
 ## Estrutura
 
 ```text
 cpp/
 ├── 2026/          # trilha principal
-├── 2026_backup/   # copia historica, manter como esta
+├── 2026_backup/   # copia historica
 ├── etc/           # exercicios antigos, exemplos e materiais soltos
 ├── run-cpp.cmd    # helper para compilar e executar pelo CMD
 └── readme.md
@@ -57,6 +57,6 @@ g++ -g 08.cpp -o 08.exe
 
 ## Observacoes
 
-- `2026` e a trilha ativa.
-- `2026_backup` e historico e nao deve ser reorganizado.
+- `2026` é a trilha ativa.
+- `2026_backup` é histórico.
 - `etc` guarda material antigo e exemplos auxiliares.
