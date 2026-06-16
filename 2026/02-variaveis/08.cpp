@@ -6,7 +6,11 @@ using namespace std;
   a 18) ou não. Se for adulto, coloque true na saída padrão, caso contrário coloque false.
 */
 
+
+
 int main() {
+
+  cout << "Digite idade" << endl;
 
   return 0;
 }
