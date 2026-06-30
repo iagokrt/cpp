@@ -30,10 +30,11 @@ int main(){
     while(true){
         mat.lerValores();
 
-        if(mat.ehSingular())
+        if(mat.ehSingular()) {
             cout<<"A matriz eh singular"<<endl;
-        else
+        } else {
             cout<<"O determinante eh: "<<mat.determinante()<<endl;
+        }
     }
 
     return 0;
