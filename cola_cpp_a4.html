@@ -1,0 +1,521 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <title>Snippets C++ A4</title>
+  <style>
+    @page { size: A4; margin: 6mm; }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      width: 198mm;
+      min-height: 285mm;
+      background: #fff;
+      color: #111;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 6.15px;
+      line-height: 1.08;
+    }
+    main {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.35mm;
+      align-items: start;
+    }
+    section {
+      border: .65px solid #222;
+      margin-bottom: .82mm;
+      overflow: hidden;
+      break-inside: avoid;
+    }
+    h2 {
+      margin: 0;
+      padding: .48mm .7mm .38mm;
+      background: #111;
+      color: #fff;
+      font-size: 6.75px;
+      line-height: 1;
+      text-transform: uppercase;
+      letter-spacing: .16px;
+    }
+    .body { padding: .54mm .62mm .62mm; }
+    .src {
+      display: inline-block;
+      margin-bottom: .28mm;
+      padding: .18mm .42mm;
+      border: .4px solid #777;
+      background: #eee;
+      font-size: 5.25px;
+      font-weight: 800;
+    }
+    pre {
+      margin: .28mm 0;
+      padding: .38mm .45mm;
+      border: .45px solid #aaa;
+      background: #f7f7f7;
+      white-space: pre-wrap;
+      overflow-wrap: anywhere;
+      font-family: Consolas, "Courier New", monospace;
+      font-size: 5.12px;
+      line-height: 1.02;
+    }
+    code { font-family: Consolas, "Courier New", monospace; }
+    .two {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: .55mm;
+    }
+    .footer {
+      grid-column: 1 / -1;
+      border: .65px solid #111;
+      padding: .58mm .8mm;
+      font-size: 6.35px;
+      font-weight: 800;
+    }
+    @media print {
+      body { width: auto; min-height: auto; }
+      main { gap: 1.2mm; }
+      section { margin-bottom: .7mm; }
+    }
+  </style>
+</head>
+<body>
+<main>
+  <div>
+    <section>
+      <h2>argv + entrada padrão</h2>
+      <div class="body">
+        <span class="src">2026_backup/utils/entrada_padrao.cpp</span>
+<pre><code>#include &lt;iostream&gt;
+#include &lt;cmath&gt;
+using namespace std;
+
+int main(int argc, char** argv) {
+  const double PI = acos(-1);
+  double r, area;
+
+  if (argc &lt; 2) {
+    cout &lt;&lt; "Insira o valor raio (argumento)\n";
+    return 1;
+  }
+
+  r = stod(argv[1]);
+  area = PI * r * r;
+  cout &lt;&lt; "Area: " &lt;&lt; area &lt;&lt; endl;
+}</code></pre>
+      </div>
+    </section>
+
+    <section>
+      <h2>função + argv + desvio</h2>
+      <div class="body">
+        <span class="src">2026_backup/utils/media_desvioPadrao.cpp</span>
+<pre><code>#include &lt;iostream&gt;
+#include &lt;cmath&gt;
+using namespace std;
+
+float CalculaMedia(float a,float b,float c){
+  return (a+b+c) / 3;
+}
+
+float CalculaDesvio(float a,float b,float c,float u){
+  float d = 0;
+  d += (a-u)*(a-u);
+  d += (b-u)*(b-u);
+  d += (c-u)*(c-u);
+  return sqrt(d / 3);
+}
+
+int main(int argc, char** argv){
+  if(argc &lt; 4){ cout &lt;&lt; "uso: prg A B C\n"; return 1; }
+  float a=stof(argv[1]), b=stof(argv[2]), c=stof(argv[3]);
+  float m = CalculaMedia(a,b,c);
+  float d = CalculaDesvio(a,b,c,m);
+  printf("%.2f\n%.2f\n", m, d);
+}</code></pre>
+      </div>
+    </section>
+
+    <section>
+      <h2>troca / ordena com ponteiro</h2>
+      <div class="body">
+        <span class="src">2026_backup/utils/ordenacao_ponteiro.cpp</span>
+<pre><code>#include &lt;iostream&gt;
+#include &lt;iomanip&gt;
+using namespace std;
+
+void Troca(float *a, float *b){
+  float temp = *a;
+  *a = *b;
+  *b = temp;
+}
+
+void OrdenaTres(float *x,float *y,float *z){
+  if(*x &gt; *y) Troca(x,y);
+  if(*x &gt; *z) Troca(x,z);
+  if(*y &gt; *z) Troca(y,z);
+}
+
+int main(){
+  float x,y,z;
+  cin &gt;&gt; x &gt;&gt; y &gt;&gt; z;
+  OrdenaTres(&amp;x,&amp;y,&amp;z);
+  cout &lt;&lt; fixed &lt;&lt; setprecision(1);
+  cout &lt;&lt; "x = " &lt;&lt; x &lt;&lt; ", y = " &lt;&lt; y &lt;&lt; " e z = " &lt;&lt; z;
+}</code></pre>
+      </div>
+    </section>
+
+    <section>
+      <h2>referência + enum + loop</h2>
+      <div class="body">
+        <span class="src">2026_backup/utils/emule_robot_pt1.cpp</span>
+<pre><code>#include &lt;iostream&gt;
+#include &lt;cmath&gt;
+#include &lt;chrono&gt;
+#include &lt;thread&gt;
+using namespace std;
+using namespace chrono_literals;
+
+enum Res { RESULTADO_OK = 0, RESULTADO_FALHO = 1 };
+
+Res velocity(int &amp;v,int &amp;w,int l,int &amp;v1,int &amp;v2){
+  const double MAX = 100.0;
+  if(abs(v) &gt; MAX || abs(w) &gt; MAX) return RESULTADO_FALHO;
+  v1 = v + l*w;
+  v2 = v - v1;
+  return RESULTADO_OK;
+}
+
+while(true){
+  cin &gt;&gt; v &gt;&gt; w;
+  Res r = velocity(v,w,l,v1,v2);
+  if(r == RESULTADO_OK) cout &lt;&lt; v1 &lt;&lt; " " &lt;&lt; v2;
+  this_thread::sleep_for(1000ms);
+}</code></pre>
+      </div>
+    </section>
+
+    <section>
+      <h2>sensor da prova</h2>
+      <div class="body">
+        <span class="src">2026/PROVA/prova_questao1.cpp</span>
+<pre><code>#include &lt;iomanip&gt;
+
+float ConvertTemp(float s,float sMin,float sMax){
+  return ((s - sMin) * 100) / (sMax - sMin);
+}
+
+if(sMax - sMin == 0) return 1;
+
+while(true){
+  cout &lt;&lt; "Digite o valor lido pelo sensor: ";
+  cin &gt;&gt; s;
+  float c = ConvertTemp(s,sMin,sMax);
+
+  if(c &lt;= -50 || c &gt;= 150)
+    cout &lt;&lt; "Alerta: Temperatura (" &lt;&lt; c &lt;&lt; " C) fora";
+  else
+    cout &lt;&lt; fixed &lt;&lt; setprecision(2)
+         &lt;&lt; "Temperatura: " &lt;&lt; c &lt;&lt; " C";
+}</code></pre>
+      </div>
+    </section>
+  </div>
+
+  <div>
+    <section>
+      <h2>classe Point</h2>
+      <div class="body">
+        <span class="src">2026_backup/04-classes-objetos/tutorial.md</span>
+<pre><code>class Point {
+private:
+  int x;
+  int y;
+
+public:
+  Point(int x, int y) : x(x), y(y) {}
+
+  int getX(){ return x; }
+  int getY(){ return y; }
+
+  void setCoords(int x_, int y_){
+    x = x_;
+    y = y_;
+  }
+};</code></pre>
+      </div>
+    </section>
+
+    <section>
+      <h2>classe fora da interface</h2>
+      <div class="body">
+        <span class="src">_12345/Rectangle.h + Rectangle.cpp</span>
+<pre><code>class Rectangle {
+private:
+  Point a;
+  Point b;
+public:
+  Rectangle(Point a, Point b);
+  int largura();
+  int altura();
+  int area();
+  int perimeter();
+  bool contemPonto(Point p);
+};
+
+Rectangle::Rectangle(Point a, Point b) : a(a), b(b) {}
+
+int Rectangle::largura(){
+  return abs(a.getX() - b.getX());
+}
+int Rectangle::altura(){
+  return abs(a.getY() - b.getY());
+}
+int Rectangle::area(){ return largura() * altura(); }
+int Rectangle::perimeter(){ return (largura()+altura())*2; }</code></pre>
+      </div>
+    </section>
+
+    <section>
+      <h2>classe matriz 2x2</h2>
+      <div class="body">
+        <span class="src">test01.cpp</span>
+<pre><code>class Matriz2x2{
+private:
+  int m[2][2];
+public:
+  void lerValores(){
+    for(int i=0;i&lt;2;i++)
+      for(int j=0;j&lt;2;j++)
+        cin &gt;&gt; m[i][j];
+  }
+  int determinante(){
+    return m[0][0]*m[1][1] - m[0][1]*m[1][0];
+  }
+  bool ehSingular(){ return determinante() == 0; }
+};
+
+Matriz2x2 mat;
+mat.lerValores();
+if(mat.ehSingular()) cout &lt;&lt; "singular";
+else cout &lt;&lt; mat.determinante();</code></pre>
+      </div>
+    </section>
+
+    <section>
+      <h2>struct + new[]</h2>
+      <div class="body">
+        <span class="src">test02.cpp / modelo struct</span>
+<pre><code>struct Vetores{
+  int *A;
+  int *B;
+  int *soma;
+};
+
+int n; cin &gt;&gt; n;
+Vetores v;
+v.A = new int[n];
+v.B = new int[n];
+v.soma = new int[n];
+
+for(int i=0;i&lt;n;i++) cin &gt;&gt; v.A[i];
+for(int i=0;i&lt;n;i++) cin &gt;&gt; v.B[i];
+for(int i=0;i&lt;n;i++) v.soma[i] = v.A[i] + v.B[i];
+for(int i=0;i&lt;n;i++) cout &lt;&lt; v.soma[i] &lt;&lt; endl;
+
+delete[] v.A; delete[] v.B; delete[] v.soma;
+v.A = v.B = v.soma = nullptr;</code></pre>
+      </div>
+    </section>
+
+    <section>
+      <h2>alloc: vetor / matriz</h2>
+      <div class="body">
+        <span class="src">padrão prático alloc</span>
+<pre><code>int *v = new int[n];
+for(int i=0;i&lt;n;i++) cin &gt;&gt; v[i];
+delete[] v;
+v = nullptr;
+
+int **m = new int*[lin];
+for(int i=0;i&lt;lin;i++) m[i] = new int[col];
+
+for(int i=0;i&lt;lin;i++)
+  for(int j=0;j&lt;col;j++) cin &gt;&gt; m[i][j];
+
+for(int i=0;i&lt;lin;i++) delete[] m[i];
+delete[] m;
+m = nullptr;</code></pre>
+      </div>
+    </section>
+
+    <section>
+      <h2>ponteiro: vetor/matriz</h2>
+      <div class="body">
+        <span class="src">modelo 09/10-ponteiros</span>
+<pre><code>int x = 10;
+int *p = &amp;x;
+*p = 20;
+
+int v[3] = {4,5,6};
+int *pv = v;
+cout &lt;&lt; *(pv + 1);       // 5
+
+int m[2][3];
+*(*(m+i)+j) == m[i][j];
+
+int **pp = &amp;p;
+cout &lt;&lt; **pp;</code></pre>
+      </div>
+    </section>
+  </div>
+
+  <div>
+    <section>
+      <h2>string concat 3 jeitos</h2>
+      <div class="body">
+        <span class="src">2026_backup/06-strings/1.cpp</span>
+<pre><code>#include &lt;cstring&gt;
+
+string concat(string a,string b){
+  return a + b;
+}
+
+void concat_cs(char a[], char b[], char c[]){
+  strcpy(c, a);
+  strcat(c, b);
+}
+
+void concat_memo(char a[], char b[], char c[]){
+  int i = 0;
+  while(a[i] != '\0'){ c[i] = a[i]; i++; }
+  int j = 0;
+  while(b[j] != '\0'){ c[i] = b[j]; i++; j++; }
+  c[i] = '\0';
+}</code></pre>
+      </div>
+    </section>
+
+    <section>
+      <h2>string reverse / replace</h2>
+      <div class="body">
+        <span class="src">2026_backup/06-strings/3.cpp + 5.cpp</span>
+<pre><code>string reverse(string a){
+  string r = "";
+  for(int i=a.size()-1; i&gt;=0; i--) r += a[i];
+  return r;
+}
+
+void replace_memo(char s[], char old, char fill){
+  int i = 0;
+  while(s[i] != '\0'){
+    if(s[i] == old) s[i] = fill;
+    i++;
+  }
+}</code></pre>
+      </div>
+    </section>
+
+    <section>
+      <h2>string palíndromo / caps</h2>
+      <div class="body">
+        <span class="src">2026_backup/06-strings/7.cpp + 10.cpp</span>
+<pre><code>bool isPalindrome_v2(char s[]){
+  int size=0, left=0;
+  while(s[size] != '\0') size++;
+  int right = size - 1;
+
+  while(left &lt; right){
+    if(s[left] != s[right]) return false;
+    left++;
+    right--;
+  }
+  return true;
+}
+
+void caps_lock_troca_thr(char s[]){
+  for(int i=0; s[i] != '\0'; i++){
+    if(s[i] &gt;= 'A' &amp;&amp; s[i] &lt;= 'Z') s[i] += ('a'-'A');
+    else if(s[i] &gt;= 'a' &amp;&amp; s[i] &lt;= 'z') s[i] -= ('a'-'A');
+  }
+}</code></pre>
+      </div>
+    </section>
+
+    <section>
+      <h2>vetor fibonacci</h2>
+      <div class="body">
+        <span class="src">etc/06-nova-lista/15-fibo.cpp</span>
+<pre><code>void fib_v(long long *vetor, int n){
+  long long f, f_1 = 1, f_2 = 0;
+
+  for(int i=0;i&lt;n;i++){
+    if(i == 0){ vetor[i] = 0; continue; }
+    if(i == 1){ vetor[i] = 1; continue; }
+    f = f_1 + f_2;
+    f_2 = f_1;
+    f_1 = f;
+    vetor[i] = f;
+  }
+}
+
+long long vetor[50];
+fib_v(vetor, a);
+for(int i=0;i&lt;a;i++) cout &lt;&lt; vetor[i] &lt;&lt; endl;</code></pre>
+      </div>
+    </section>
+
+    <section>
+      <h2>vetor desvio 10</h2>
+      <div class="body">
+        <span class="src">etc/05-vetores/11desvioPadrao.cpp</span>
+<pre><code>float valores[10] = {1,-8,9,255,2,4,6,8,10,12};
+float soma = 0, media = 0, desvio = 0;
+
+for(int i=0;i&lt;10;i++) soma += valores[i];
+media = soma / 10;
+
+for(int i=0;i&lt;10;i++)
+  desvio += (valores[i]-media) * (valores[i]-media);
+
+desvio = sqrt(desvio / 10);
+cout &lt;&lt; "media:" &lt;&lt; media &lt;&lt; endl;
+cout &lt;&lt; "desvio:" &lt;&lt; desvio &lt;&lt; endl;</code></pre>
+      </div>
+    </section>
+
+    <section>
+      <h2>bitwise rwx com máscara</h2>
+      <div class="body">
+        <span class="src">prova iago-b refeito com bitwise</span>
+<pre><code>bool valida(string s){
+  if(s.size() != 3) return false;
+  for(int i=0;i&lt;3;i++)
+    if(s[i] != 'r' &amp;&amp; s[i] != 'w' &amp;&amp; s[i] != 'x' &amp;&amp; s[i] != '-')
+      return false;
+  return true;
+}
+
+int rwx(string s){
+  int mask = 0;
+  if(s[0] == 'r') mask |= (1 &lt;&lt; 2); // 4
+  if(s[1] == 'w') mask |= (1 &lt;&lt; 1); // 2
+  if(s[2] == 'x') mask |= (1 &lt;&lt; 0); // 1
+  return mask;
+}
+
+mask |= 4;     // liga r
+mask &amp;= ~2;    // desliga w
+mask ^= 1;     // alterna x
+if(mask &amp; 4) cout &lt;&lt; "r";</code></pre>
+      </div>
+    </section>
+  </div>
+
+  <div class="footer">
+    PDF: abrir este HTML no navegador -> Ctrl+P -> Salvar como PDF -> A4 -> escala 100% ou Ajustar à página -> sem cabeçalhos/rodapés.
+  </div>
+</main>
+</body>
+</html>
